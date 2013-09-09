@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>newslick</title>
+        <link rel="stylesheet" href="stylesheets/newslick.css" />
+    </head>
+    <body>
+        <div class="root">
+            <header>
+                <h1>newslick</h1>
+                <nav>
+                    <ul>
+                        <li><a href="refresh">refresh</a></li>
+                    </ul>
+                </nav>
+            </header>
+            <section class="stories">
+                <% stories.forEach(function(story, index) { %>
+                    <% klass = (index === 0) ? 'active' : ''; %>
+                    <article class="story <%=klass%>" data-href="<%= story.href %>" style="background-image:url(<%= story.image %>)">
+                        <div class="text">
+                            <h2><%= story.title %></h2>
+                            <p class="body"><%= story.body %></p>
+                            <p class="link"><a href="<%= story.href %>">Read More</a></p>
+                        </div>
+                    </article>
+                <% }); %>
+            </section>
+            <footer>
+
+            </footer>
+        </div><!-- .root -->
+        <script src="javascripts/newslick.js"></script>
+    </body>
+</html>
