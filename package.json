@@ -4,6 +4,7 @@
   "scripts": {
     "start": "node newslick.js"
   },
+  "readme": "https://github.com/pete-otaqui/newslick/blob/master/README.md",
   "repository" : {
     "type" : "git",
     "url" : "https://github.com/pete-otaqui/newslick.git"
