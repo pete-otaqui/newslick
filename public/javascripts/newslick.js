@@ -21,7 +21,7 @@
         }, 10);
         index++;
     }
-    setInterval(showNext, 5000);
+    setInterval(showNext, 10000);
 
     document.body.addEventListener('click', function(e) {
         var href = e.target.getAttribute('data-href');
