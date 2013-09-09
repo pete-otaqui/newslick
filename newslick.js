@@ -6,7 +6,8 @@ var stories = [
     {
         "title": "Loading",
         "body": "Loading Data",
-        "href": "#"
+        "href": "#",
+        "image": "images/news.jpg"
     }
 ];
 var feeds = ['bbc'];
