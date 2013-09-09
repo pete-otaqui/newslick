@@ -1,0 +1,1 @@
+web: node newslick.js
