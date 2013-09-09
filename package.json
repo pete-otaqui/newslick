@@ -4,6 +4,10 @@
   "scripts": {
     "start": "node newslick.js"
   },
+  "repository" : {
+    "type" : "git",
+    "url" : "https://github.com/pete-otaqui/newslick.git"
+  },
   "contributors": [
     {
       "name": "Pete Otaqui",
