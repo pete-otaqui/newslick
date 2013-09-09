@@ -2,6 +2,10 @@ var express = require('express');
 var app = express();
 var Q = require('q');
 
+
+var refresh_rate = 20 * 60 * 1000; // 20 minutes;
+
+
 var stories = [
     {
         "title": "Loading",
@@ -28,18 +32,24 @@ app.use(express.static('public'));
 
 
 app.get('/', function(req, res) {
-    res.render('index.ejs', {"stories": stories});
+    res.render('index.ejs', {"stories": stories, "refresh_rate": refresh_rate});
 });
 
-loadFeeds()
-    .then(function(data) {
-        var s = [];
-        data.forEach(function(feed, index) {
-            if ( index > 3 ) return;
-            s = s.concat(feed.stories);
+function doRefresh() {
+    loadFeeds()
+        .then(function(data) {
+            var s = [];
+            data.forEach(function(feed, index) {
+                if ( index > 3 ) return;
+                s = s.concat(feed.stories);
+            });
+            stories = s;
         });
-        console.log('s', s.length);
-        stories = s;
-    });
+}
+setInterval(doRefresh, refresh_rate);
+doRefresh();
 
-app.listen(80, '0.0.0.0');
+
+
+var port = process.env.PORT || 5000;
+app.listen(port);
