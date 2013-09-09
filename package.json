@@ -8,6 +8,10 @@
     "type" : "git",
     "url" : "https://github.com/pete-otaqui/newslick.git"
   },
+  "engines": {
+    "node": "0.10.x",
+    "npm":  "1.2.x"
+  },
   "contributors": [
     {
       "name": "Pete Otaqui",
