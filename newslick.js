@@ -41,4 +41,5 @@ loadFeeds()
         stories = s;
     });
 
-app.listen(80, '0.0.0.0');
+var port = process.env.PORT || 5000;
+app.listen(port);
